@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        addEmployee.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NewApi")
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(new Intent(MainActivity.this,AddEmployeeActivity.class));
+            }
+        });
+
     }
 
 

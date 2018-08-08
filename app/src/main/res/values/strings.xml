@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Leave Management</string>
     <string name="add_employee">Add Employee</string>
     <string name="view_employees">View Employees</string>
@@ -23,4 +23,17 @@
     <string name="remarks">remarks</string>
     <string name="half_day">Half Day</string>
     <string name="_2_and_half">2 and half</string>
+    <string name="nameNe">Name*</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="phonen">Phone*</string>
+    <string name="choose_picture">Choose Image</string>
+    <string name="chooseImageTxt">Please Choose Image to proceed</string>
+    <string name="emailPattern" tools:ignore="TypographyDashes">[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+[a-z]+</string>
+    <string name="invalidEmailError">Invalid email format</string>
+    <string name="onlyTextRestriction">^[a-zA-Z. ]+$</string>
+    <string name="errorOnlyText">Input should contain Only text</string>
+    <string name="mobileNumError">Mobile number should be 10 digits</string>
+    <string name="onlydigitsPattern" tools:ignore="TypographyDashes">[0-9]+</string>
+    <string name="errorOnlyDigits">Input should contain Only Digits</string>
+
 </resources>

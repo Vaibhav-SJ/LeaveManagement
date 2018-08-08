@@ -48,6 +48,11 @@ dependencies {
     //For rotteting progress bar
     implementation 'com.victor:lib:1.0.2'
 
+
+
+    //Add this line  For image upload
+    implementation 'net.gotev:uploadservice:2.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

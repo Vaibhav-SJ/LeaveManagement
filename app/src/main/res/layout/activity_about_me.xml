@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:actionMenuTextAppearance="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_below="@id/appbar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:padding="@dimen/dimen_10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nameTxt"
+                android:text="Name : "
+                android:textColor="#000"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:textSize="@dimen/dimen_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/nameAns"
+                android:layout_toRightOf="@+id/nameTxt"
+                android:layout_alignBaseline="@+id/nameTxt"
+                android:text="Vaibhav Joshi "
+                android:textColor="#000"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:textSize="@dimen/dimen_24sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText"
+                android:layout_toEndOf="@+id/nameTxt" />
+
+            <TextView
+                android:id="@+id/emailTxt"
+                android:layout_below="@+id/nameAns"
+                android:text="Email : "
+                android:textColor="#000"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:textSize="@dimen/dimen_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/emailAns"
+                android:layout_below="@+id/nameAns"
+                android:layout_toRightOf="@+id/emailTxt"
+                android:layout_alignBaseline="@+id/emailTxt"
+                android:text="vaibhavjoshi9126@gmail.com"
+                android:textColor="#000"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:textSize="@dimen/dimen_22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText"
+                android:layout_toEndOf="@+id/nameTxt" />
+
+            <TextView
+                android:id="@+id/phoneTxt"
+                android:layout_below="@+id/emailAns"
+                android:text="Phone : "
+                android:textColor="#000"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:textSize="@dimen/dimen_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/phoneAns"
+                android:layout_below="@+id/emailAns"
+                android:layout_toRightOf="@+id/phoneTxt"
+                android:layout_alignBaseline="@+id/phoneTxt"
+                android:text="9964396566"
+                android:textColor="#000"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:textSize="@dimen/dimen_22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText"
+                android:layout_toEndOf="@+id/phoneTxt" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

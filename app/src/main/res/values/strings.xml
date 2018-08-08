@@ -14,4 +14,13 @@
     <string name="email">Email :</string>
     <string name="age">Age :</string>
     <string name="gender">Gender :</string>
+    <string name="sanctionTxt">Sanction Leave</string>
+    <string name="sanctionedTxt">Sanctioned Leaves</string>
+    <string name="days">No. of Days*</string>
+    <string name="mandtory_text">Mandtory</string>
+    <string name="noInternet">OOPS! No internet connection to proceed</string>
+    <string name="submit">Submit</string>
+    <string name="remarks">remarks</string>
+    <string name="half_day">Half Day</string>
+    <string name="_2_and_half">2 and half</string>
 </resources>

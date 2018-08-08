@@ -17,6 +17,7 @@ import com.example.vaibhav.leavemanagement.adapters.MyAdapter;
 import com.example.vaibhav.leavemanagement.apis.HomeAPI;
 import com.example.vaibhav.leavemanagement.pojo.GetEmployeeDetailsModule;
 import com.example.vaibhav.leavemanagement.servicegenerator.ServiceGenerator;
+import com.example.vaibhav.leavemanagement.utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,6 +106,7 @@ public class ViewEmployeesActivity extends AppCompatActivity
 
     private void getItems()
     {
+        CommonUtils.displayProgressDialog(ViewEmployeesActivity.this,"");
         TypedInput input = new TypedByteArray("application/json",RequestJson.getEmployeeDetails().toString().getBytes());
         homeAPI.getEmployeeDetails(input, new Callback<GetEmployeeDetailsModule>()
         {
@@ -117,6 +119,8 @@ public class ViewEmployeesActivity extends AppCompatActivity
                 adapter = new MyAdapter(ViewEmployeesActivity.this,detailsList);
                 recyclerView.setAdapter(adapter);
                 loadTxt.setVisibility(View.GONE);
+
+                CommonUtils.dismissProgressDialog();
             }
 
             @Override

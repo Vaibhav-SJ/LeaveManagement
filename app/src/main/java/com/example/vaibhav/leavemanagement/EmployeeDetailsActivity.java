@@ -3,7 +3,10 @@ package com.example.vaibhav.leavemanagement;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +32,11 @@ import butterknife.ButterKnife;
 public class EmployeeDetailsActivity extends AppCompatActivity
 {
 
+    //To check Internet connection
+    ConnectivityManager connMgr;
+    android.net.NetworkInfo wifi ;
+    android.net.NetworkInfo mobile ;
+    Boolean internetConnection = false;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -115,7 +123,54 @@ public class EmployeeDetailsActivity extends AppCompatActivity
             }
         });
 
+        sanctionLeaveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(EmployeeDetailsActivity.this,SanctionLeaveActivity.class);
+                intent.putExtra("eid",getIntent().getStringExtra("id"));
+                startActivity(intent);
+            }
+        });
+
+        sanctionedLeaveBtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NewApi")
+            @Override
+            public void onClick(View view)
+            {
+
+                internetConnection = checkInternetConnectionFun();
+
+                if(internetConnection)
+                {
+                    Intent intent = new Intent(EmployeeDetailsActivity.this,SanctionedLeavesActivity.class);
+                    intent.putExtra("eid",getIntent().getStringExtra("id"));
+                    startActivity(intent);
+                }
+                else
+                {
+                    showToastMsgFun(getResources().getString(R.string.noInternet));
+                }
+
+            }
+        });
+
     }
+
+
+    //Function to check internet connection
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private Boolean checkInternetConnectionFun()
+    {
+        //To check Internet connection
+        connMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connMgr != null) {
+            wifi = Objects.requireNonNull(connMgr).getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        }
+        mobile = Objects.requireNonNull(connMgr).getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        return wifi.isConnected() || mobile.isConnected();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

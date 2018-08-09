@@ -35,5 +35,6 @@
     <string name="mobileNumError">Mobile number should be 10 digits</string>
     <string name="onlydigitsPattern" tools:ignore="TypographyDashes">[0-9]+</string>
     <string name="errorOnlyDigits">Input should contain Only Digits</string>
+    <string name="imageNotSelectedTxt">Image Not Selected</string>
 
 </resources>

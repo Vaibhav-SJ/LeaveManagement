@@ -19,4 +19,7 @@ public interface HomeAPI
 
     @POST("/index.php/admin/getLeaveDetailsByEID")
     void getLeaveDetails(@Body TypedInput input, Callback<LeaveDetailsModel> leaveDetailsModelCallback);
+
+    @POST("/index.php/admin/addEmployeeDetails")
+    void addEmployeeDetails(@Body TypedInput input, Callback<SuccessModel> successModelCallback);
 }

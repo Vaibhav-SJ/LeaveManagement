@@ -38,5 +38,26 @@ public class RequestJson
         return object;
     }
 
+    public static JSONObject addEmployeeDetails(String name,String phone,String age,
+                                                String gender,String img_url,String designation
+            ,String email)
+    {
+        JSONObject object = new JSONObject();
+
+        try {
+            object.put("name",name);
+            object.put("phone",phone);
+            object.put("age",age);
+            object.put("gender",gender);
+            object.put("img_url",img_url);
+            object.put("designation",designation);
+            object.put("email",email);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return object;
+    }
+
 
 }
